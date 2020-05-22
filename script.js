@@ -13,9 +13,11 @@ function writePassword() {
 //Select Passord Criteria
 function generatePassword(){
   var criteria = Number(prompt("Which criteria to include in the password?\n  [1] Length\n  [2] Character Type\n  [3] All the Above"));
-  var length = [1,3].includes(criteria) ? getLength() : (Math.floor(Math.random()*121)+8);
-  var charType = [2,3].includes(criteria) ? Object.values(getCharType()) : [true,true,true,true];
-  return getPassword(length,charType);
+  if (criteria!=0){
+    var length = [1,3].includes(criteria) ? getLength() : (Math.floor(Math.random()*121)+8);
+    var charType = [2,3].includes(criteria) ? Object.values(getCharType()) : [true,true,true,true];
+    return getPassword(length,charType);
+  }else return "";
 }
 
 //Get Length Criteria
