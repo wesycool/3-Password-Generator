@@ -19,6 +19,7 @@ function generatePassword(){
     var charType = [2,3].includes(criteria) ? Object.values(getCharType()) : [true,true,true,true];
     return getPassword(length,charType);
   }else return "";
+  
 }
 
 //Get Length Criteria
